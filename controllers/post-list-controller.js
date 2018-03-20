@@ -10,23 +10,23 @@ PostList.findAll()
       data: posts
     });
   }).catch(err => {
-    console.log('you ahs an error at your postlist controller', err);
+    // console.log('you ahs an error at your postlist controller', err);
     res.status(500).json(err);
   })
 }
 
 postListController.show = (req, res) => {
-  
+
  PostList.findById(req.params.id)
    .then(posts => {
-     console.log('show controller working');
+     // console.log('show controller working');
      res.json({
        message:'postListController show is getting data',
        posts })
    })
    .catch(err => {
     console.log('why is show controller is not working')
-    console.log(req.params)
+    // console.log(req.params)
      res.status(400).json(err);
    });
 };

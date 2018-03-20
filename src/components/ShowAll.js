@@ -4,7 +4,7 @@ class ShowAll extends Component {
   render(){
     return(
       <div>
-        <Header/>
+        <Nav/>
         <h1>this is index component</h1>
       </div>
     )

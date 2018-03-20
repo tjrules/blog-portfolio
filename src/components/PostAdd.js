@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Redirect, Link} from 'react-router-dom';
 
-import Header from './Header';
+import Nav from './Nav';
 
 
 class PostAdd extends Component {
@@ -31,22 +31,22 @@ class PostAdd extends Component {
       content: this.state.content,
     })
     .then(res=> {
-      console.log('this is res in handlform submit', res)
+      // console.log('this is res in handlform submit', res)
       this.setState({
         newId: res.data.post.id,
         fireRedirect: true,
       })
-      console.log('we did it!', res)
-      console.log('new state', this.state.newId)
+      // console.log('we did it!', res)
+      // console.log('new state', this.state.newId)
     })
     .catch(err=> console.log('error at handle form submit', err))
     e.target.reset()
   }
   render(){
-    console.log('this is state', this.state);
+    // console.log('this is state', this.state);
     return(
       <div className="add text-center">
-        <Header />
+        <Nav />
         <div className="container ">
           <h2>Create New Post</h2>
           <form className="form-horizontal" onSubmit={this.handleFormSubmit}  action="/blog" method="POST">

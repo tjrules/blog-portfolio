@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Redirect, Link} from 'react-router-dom';
-import Header from './Header';
+import Nav from './Nav';
 
 class PostEdit extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ componentDidMount() {
       title: posts.title,
       content: posts.content,
     })
-    console.log('this is res componentDidMount', res)
+    // console.log('this is res componentDidMount', res)
   })
   .catch(err => console.log('there is an error in edit component did mount', err));
 }
@@ -54,7 +54,7 @@ handleInputChange(e){
       content: this.state.content,
     })
     .then(res=> {
-      console.log('we did it!', res)
+      // console.log('we did it!', res)
       this.setState({
         fireRedirect: true,
       });
@@ -69,7 +69,7 @@ handleInputChange(e){
 
 
       <div className="add text-center">
-        <Header />
+        <Nav />
         <div className="container ">
           <h2>Create New Post</h2>
           <form className="form-horizontal" onSubmit={this.handleFormSubmit}  action="/" method="POST">

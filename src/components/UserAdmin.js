@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import AdminPostShow from './AdminPostShow';
+import AdminProjectShow from './AdminProjectShow';
 import {Link} from 'react-router-dom';
-import Header from './Header';
+import Nav from './Nav';
 
 class UserAdmin extends Component {
   constructor() {
@@ -16,10 +17,11 @@ class UserAdmin extends Component {
 
 
   componentDidMount() {
-    axios.get('/posts').then(res => {
+    axios.get('/posts', '/projects').then(res => {
       this.setState({apiDataLoaded: true, apiData: res.data.posts})
     }).catch(err => {
       console.log('there is an error at componentdidmount', err)
+      res.status(500).json(err);
     })
   }
 
@@ -27,7 +29,10 @@ class UserAdmin extends Component {
     if (this.state.apiDataLoaded) {
       return this.state.apiData.map(posts => {
         return (
-          <AdminPostShow key={posts.id} posts={posts}/>
+          <div>
+            <AdminPostShow key={posts.title} posts={posts}/>
+            <AdminProjectShow key={projects.title} projects={projects}/>
+          </div>
         );
       });
     } else return <p>Your list is empty</p>
@@ -37,7 +42,7 @@ j
     return (
 
       <div>
-      <Header/>
+      <Nav />
 
       <div className="">
         <div className="">

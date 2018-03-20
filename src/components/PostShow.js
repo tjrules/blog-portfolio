@@ -14,7 +14,7 @@ class PostShow extends Component {
 
   componentDidMount() {
     axios.get(`/post-list/${this.props.match.params.id}`).then(res => {
-      console.log('this is post show res', res);
+      // console.log('this is post show res', res);
       this.setState({
         apiDataLoaded: true,
         posts: res.data.posts,
@@ -23,7 +23,7 @@ class PostShow extends Component {
   }
 
   renderPost() {
-    console.log('this is what will render', this.state.posts)
+    // console.log('this is what will render', this.state.posts)
     return(
         <div className='container text-center'>
 <div className="media">
@@ -40,7 +40,7 @@ class PostShow extends Component {
     )
   }
   render() {
-console.log('this is state', this.state)
+// console.log('this is state', this.state)
     return (
     <div className="post-show">
 

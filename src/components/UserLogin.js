@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-import Header from './Header';
+import Nav from './Nav';
 
 class UserLogin extends Component {
   constructor() {
@@ -49,7 +49,7 @@ class UserLogin extends Component {
     return (
 
   <div className="container text-center">
-    <Header />
+    <Nav />
     <h1 className="jumbotron ">Welcome to TJ's Cool Blog
       <br/>
       Please login

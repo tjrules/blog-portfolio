@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link,Redirect} from 'react-router-dom';
 
-const Header = () => {
+const Nav = () => {
 
   return (
   <nav className="navbar navbar-inverse">
@@ -40,4 +40,4 @@ const Header = () => {
   </nav>)
 }
 
-export default Header;
+export default Nav;

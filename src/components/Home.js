@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import Nav from './Nav';
 import PostList from './PostList';
 // import HomeCard from './HomeCard';
 
@@ -21,8 +21,8 @@ class Home extends React.Component {
   render() {
     return(
       <div>
-        <Header />
-        
+        <Nav />
+
         <div>
         <PostList/>
         </div>

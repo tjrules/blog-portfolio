@@ -5,7 +5,7 @@ postsController.index = (req, res) => {
  // console.log('inside posts index', req.user)
  Post.findAll(req.user.id)
    .then(posts => {
-     console.log('this is posts', posts)
+     // console.log('this is posts', posts)
      res.json({
        message: 'hey hey this is data',
        posts
@@ -43,12 +43,12 @@ postsController.create = (req, res) => {
 postsController.show = (req, res) => {
  Post.findById(req.params.id)
    .then(posts => {
-     console.log('show controller working');
+     // console.log('show controller working');
      res.json({ posts })
    })
    .catch(err => {
     console.log('why is show controller is not working')
-    console.log(req.params)
+    // console.log(req.params)
      res.status(400).json(err);
    });
 };
@@ -57,7 +57,7 @@ postsController.show = (req, res) => {
 postsController.edit = (req,res) => {
  Post.findById(req.params.id)
    .then(posts => {
-    console.log('edit this is controller')
+    // console.log('edit this is controller')
      res.json({
       data:posts,
      })
@@ -76,7 +76,7 @@ postsController.update = (req, res) => {
      user_id: req.user.id
    }, req.params.id)
    .then( posts => {
-    console.log('this is supposed to work Update Controller', posts)
+    // console.log('this is supposed to work Update Controller', posts)
      res.json({
        posts
      })

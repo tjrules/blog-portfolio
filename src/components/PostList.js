@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import PostShow from './PostShow';
 import {Link} from 'react-router-dom';
-// import Header from 'Header';
 
 class PostList extends Component {
 
@@ -22,7 +21,7 @@ componentWillMount() {
       apiDataLoaded:true,
       apiData: res.data.data
     })
-    console.log('this is res',res)
+    // console.log('this is res',res)
   })
   .catch(err=> {
     console.log('something wrong with api call')
@@ -33,7 +32,7 @@ componentWillMount() {
 renderPostsList() {
   if(this.state.apiDataLoaded) {
     return this.state.apiData.map(posts => {
-      console.log('this is posts', posts)
+      // console.log('this is posts', posts)
       return(
         <div className="container text-center ">
 

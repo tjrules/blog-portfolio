@@ -857,113 +857,7 @@ module.exports = emptyFunction;
 module.exports = __webpack_require__(89);
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(5);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Header = function Header() {
-
-  return _react2.default.createElement(
-    'nav',
-    { className: 'navbar navbar-inverse' },
-    _react2.default.createElement(
-      'div',
-      { className: 'container-fluid' },
-      _react2.default.createElement(
-        'div',
-        { className: 'navbar-header' },
-        _react2.default.createElement(
-          'button',
-          { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
-          _react2.default.createElement('span', { className: 'icon-bar' }),
-          _react2.default.createElement('span', { className: 'icon-bar' }),
-          _react2.default.createElement('span', { className: 'icon-bar' })
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/', className: 'navbar-brand', href: '/' },
-          'TJ\'s Cool Blog'
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'collapse navbar-collapse dropdown-toggle', id: 'myNavbar' },
-        _react2.default.createElement(
-          'ul',
-          { className: 'nav navbar-nav' },
-          _react2.default.createElement(
-            'li',
-            { className: 'active' },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/' },
-              'Home'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/register' },
-              'Sign Up'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/login' },
-              'Log In'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/admin' },
-              'Admin'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'ul',
-          { className: 'nav navbar-nav navbar-right' },
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: '/auth/logout' },
-              _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-out' }),
-              'Logout'
-            )
-          )
-        )
-      )
-    )
-  );
-};
-
-exports.default = Header;
-
-/***/ }),
+/* 9 */,
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3418,8 +3312,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import Header from 'Header';
-
 var PostList = function (_Component) {
   _inherits(PostList, _Component);
 
@@ -3446,7 +3338,7 @@ var PostList = function (_Component) {
           apiDataLoaded: true,
           apiData: res.data.data
         });
-        console.log('this is res', res);
+        // console.log('this is res',res)
       }).catch(function (err) {
         console.log('something wrong with api call');
         console.log(err);
@@ -3457,7 +3349,7 @@ var PostList = function (_Component) {
     value: function renderPostsList() {
       if (this.state.apiDataLoaded) {
         return this.state.apiData.map(function (posts) {
-          console.log('this is posts', posts);
+          // console.log('this is posts', posts)
           return _react2.default.createElement(
             'div',
             { className: 'container text-center ' },
@@ -3573,7 +3465,7 @@ var PostShow = function (_Component) {
       var _this2 = this;
 
       _axios2.default.get('/post-list/' + this.props.match.params.id).then(function (res) {
-        console.log('this is post show res', res);
+        // console.log('this is post show res', res);
         _this2.setState({
           apiDataLoaded: true,
           posts: res.data.posts
@@ -3585,7 +3477,7 @@ var PostShow = function (_Component) {
   }, {
     key: 'renderPost',
     value: function renderPost() {
-      console.log('this is what will render', this.state.posts);
+      // console.log('this is what will render', this.state.posts)
       return _react2.default.createElement(
         'div',
         { className: 'container text-center' },
@@ -3614,7 +3506,7 @@ var PostShow = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log('this is state', this.state);
+      // console.log('this is state', this.state)
       return _react2.default.createElement(
         'div',
         { className: 'post-show' },
@@ -14591,11 +14483,15 @@ var _AdminPostShow = __webpack_require__(44);
 
 var _AdminPostShow2 = _interopRequireDefault(_AdminPostShow);
 
+var _AdminProjectShow = __webpack_require__(112);
+
+var _AdminProjectShow2 = _interopRequireDefault(_AdminProjectShow);
+
 var _reactRouterDom = __webpack_require__(5);
 
-var _Header = __webpack_require__(9);
+var _Nav = __webpack_require__(113);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Nav2 = _interopRequireDefault(_Nav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14626,10 +14522,11 @@ var UserAdmin = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios2.default.get('/posts').then(function (res) {
+      _axios2.default.get('/posts', '/projects').then(function (res) {
         _this2.setState({ apiDataLoaded: true, apiData: res.data.posts });
       }).catch(function (err) {
         console.log('there is an error at componentdidmount', err);
+        res.status(500).json(err);
       });
     }
   }, {
@@ -14637,7 +14534,12 @@ var UserAdmin = function (_Component) {
     value: function renderPostShow() {
       if (this.state.apiDataLoaded) {
         return this.state.apiData.map(function (posts) {
-          return _react2.default.createElement(_AdminPostShow2.default, { key: posts.id, posts: posts });
+          return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(_AdminPostShow2.default, { key: posts.title, posts: posts }),
+            _react2.default.createElement(_AdminProjectShow2.default, { key: projects.title, projects: projects })
+          );
         });
       } else return _react2.default.createElement(
         'p',
@@ -14651,7 +14553,7 @@ var UserAdmin = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'div',
           { className: '' },
@@ -15543,9 +15445,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _Header = __webpack_require__(9);
+var _Nav = __webpack_require__(113);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Nav2 = _interopRequireDefault(_Nav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15612,7 +15514,7 @@ var UserLogin = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'container text-center' },
-        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'h1',
           { className: 'jumbotron ' },
@@ -15710,9 +15612,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _Header = __webpack_require__(9);
+var _Nav = __webpack_require__(113);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Nav2 = _interopRequireDefault(_Nav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15782,7 +15684,7 @@ var UserSignUp = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'container' },
-        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'h1',
           { className: 'jumbotron text-center ' },
@@ -15884,9 +15786,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _Header = __webpack_require__(9);
+var _Nav = __webpack_require__(113);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Nav2 = _interopRequireDefault(_Nav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15935,13 +15837,13 @@ var PostAdd = function (_Component) {
         title: this.state.title,
         content: this.state.content
       }).then(function (res) {
-        console.log('this is res in handlform submit', res);
+        // console.log('this is res in handlform submit', res)
         _this2.setState({
           newId: res.data.post.id,
           fireRedirect: true
         });
-        console.log('we did it!', res);
-        console.log('new state', _this2.state.newId);
+        // console.log('we did it!', res)
+        // console.log('new state', this.state.newId)
       }).catch(function (err) {
         return console.log('error at handle form submit', err);
       });
@@ -15950,11 +15852,11 @@ var PostAdd = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log('this is state', this.state);
+      // console.log('this is state', this.state);
       return _react2.default.createElement(
         'div',
         { className: 'add text-center' },
-        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'div',
           { className: 'container ' },
@@ -16056,9 +15958,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _Header = __webpack_require__(9);
+var _Nav = __webpack_require__(113);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Nav2 = _interopRequireDefault(_Nav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16100,7 +16002,7 @@ var PostEdit = function (_Component) {
           title: posts.title,
           content: posts.content
         });
-        console.log('this is res componentDidMount', res);
+        // console.log('this is res componentDidMount', res)
       }).catch(function (err) {
         return console.log('there is an error in edit component did mount', err);
       });
@@ -16135,7 +16037,7 @@ var PostEdit = function (_Component) {
         title: this.state.title,
         content: this.state.content
       }).then(function (res) {
-        console.log('we did it!', res);
+        // console.log('we did it!', res)
         _this4.setState({
           fireRedirect: true
         });
@@ -16150,7 +16052,7 @@ var PostEdit = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'add text-center' },
-        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'div',
           { className: 'container ' },
@@ -16235,9 +16137,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(9);
+var _Nav = __webpack_require__(113);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _Nav2 = _interopRequireDefault(_Nav);
 
 var _PostList = __webpack_require__(45);
 
@@ -16278,7 +16180,7 @@ var Home = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'div',
           null,
@@ -16292,6 +16194,168 @@ var Home = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Home;
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AdminProjectShow = function AdminProjectShow(props) {
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'user-fav' },
+    _react2.default.createElement(
+      'form',
+      { action: '' },
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Title: ',
+        props.projects.title
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Overview: ',
+        props.projects.description
+      ),
+      _react2.default.createElement(
+        'button',
+        null,
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/edit/' + props.projects.id, projects: props.projects },
+          'Edit'
+        ),
+        ' '
+      )
+    )
+  );
+};
+
+exports.default = AdminProjectShow;
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav() {
+
+  return _react2.default.createElement(
+    'nav',
+    { className: 'navbar navbar-inverse' },
+    _react2.default.createElement(
+      'div',
+      { className: 'container-fluid' },
+      _react2.default.createElement(
+        'div',
+        { className: 'navbar-header' },
+        _react2.default.createElement(
+          'button',
+          { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
+          _react2.default.createElement('span', { className: 'icon-bar' }),
+          _react2.default.createElement('span', { className: 'icon-bar' }),
+          _react2.default.createElement('span', { className: 'icon-bar' })
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/', className: 'navbar-brand', href: '/' },
+          'TJ\'s Cool Blog'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'collapse navbar-collapse dropdown-toggle', id: 'myNavbar' },
+        _react2.default.createElement(
+          'ul',
+          { className: 'nav navbar-nav' },
+          _react2.default.createElement(
+            'li',
+            { className: 'active' },
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/' },
+              'Home'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/register' },
+              'Sign Up'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/login' },
+              'Log In'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/admin' },
+              'Admin'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'ul',
+          { className: 'nav navbar-nav navbar-right' },
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: '/auth/logout' },
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-out' }),
+              'Logout'
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = Nav;
 
 /***/ })
 /******/ ]);

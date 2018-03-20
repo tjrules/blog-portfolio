@@ -27,7 +27,7 @@ Post.create = (posts) => {
 };
 
 Post.update = (posts, id) => {
-  console.log("update working");
+  // console.log("update working");
   return db.oneOrNone(
   `
     UPDATE posts SET
@@ -42,7 +42,7 @@ Post.update = (posts, id) => {
 };
 
 Post.delete = id => {
-  console.log('model delete running');
+  // console.log('model delete running');
   return db.none(
     `
       DELETE FROM posts

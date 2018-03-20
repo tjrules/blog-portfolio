@@ -19,7 +19,7 @@ User.create = user => {
 };
 
 User.delete = id => {
-  console.log('User delete model running');
+  // console.log('User delete model running');
   return db.none(
     `
       DELETE FROM users
