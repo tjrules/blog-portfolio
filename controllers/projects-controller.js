@@ -29,7 +29,7 @@ projectsController.create = (req, res) => {
     })
     .then(project => {
       res.json({
-        message: 'and there were projects'
+        message: 'and there were projects',
         project
       })
     })

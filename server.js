@@ -39,8 +39,9 @@ const passport = require('passport');
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/projects', require('./routes/projects-routes'));
 app.use('/posts', require('./routes/posts-routes'));
-app.use('/auth', require('./routes/auth-routes'))
+app.use('/auth', require('./routes/auth-routes'));
 app.use('/post-list', require('./routes/post-list-routes'));
 
 
