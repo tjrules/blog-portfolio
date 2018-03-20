@@ -38,7 +38,7 @@ Post.update = (posts, id) => {
     RETURNING *
   `,
   [posts.title, posts.content, posts.user_id, id]
-);
+  );
 };
 
 Post.delete = id => {
